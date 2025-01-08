@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    display: flex;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #d6c5b3;
+}
+#sidebar{
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    /* transition: all .25s ease-in-out; */
+    transition: none;
+    background-color: #1e1f20;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+body.rendering #sidebar {
+    transition: all 0.25s ease-in-out; /* Re-enable transition */
+}
+body.loading #sidebar {
+    visibility: hidden;
+}
+body.loaded #sidebar {
+    visibility: visible;
+    transition: all 0.25s ease-in-out;
+}
+
+#sidebar.expand{
+    width: 260px;
+    min-width: 260px;
+}
+#toggle-btn{
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+#toggle-btn i{
+    font-size: 1.5rem;
+    color: #d6c5b3;
+}
+.sidebar-logo{
+    margin: auto 0;
+}
+.sidebar-logo a{
+    color: #d6c5b3;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+#sidebar:not(.expand) .sidebar-logo, 
+#sidebar:not(.expand) a.sidebar-link span{
+    display: none;
+}
+#sidebar.expand .sidebar-logo, 
+#sidebar.expand a.sidebar-link span{
+    animation: fadeIn .25s ease;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.sidebar-nav{
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+a.sidebar-link{
+    padding: .625rem 1.625rem;
+    color: #d6c5b3;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+.sidebar-link i,
+.dropdown-item i{
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+a.sidebar-link:hover{
+    background-color: #d6c5b3;
+    border-left: 3px solid green;
+    transition: .25s ease-in-out;
+    color: #1e1f20;
+}
+
+.sidebar-item{
+    position: relative;
+}
+.navbar{
+    background-color: #d6c5b3;
+    /* box-shadow: 0 0 2rem rgba(33, 37, 41, .1); */
+}
+.navbar-expand .navbar-collapse{
+    min-width: 200px;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+}
+.button {
+    display: flex;               /* Enables Flexbox */
+    align-items: center;         /* Aligns items vertically */
+    justify-content: center;     /* Aligns items horizontally (optional if you want equal spacing) */
+    background-color: #1e1f20;
+    color: #d6c5b3;
+    border: 0;
+    padding: 10px 20px;          /* Adds padding for a better button look */
+    border-radius: 5px;          /* Matches the 'rounded-5' class */
+}
+
+.button span {
+    font-size: 1rem;
+    padding: 0;                  /* Remove padding as Flexbox takes care of spacing */
+    margin-left: 8px;            /* Adds spacing between the icon and text */
+}
+
+.button i {
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-right: 4px;           /* Adds spacing between the icon and text (if needed) */
+}
+.button:hover{
+    background-color: #4A4B4C;
+    transition: .25s ease-in-out;
+}
+.card{
+    background-color: #fff;
+    transform: .4s;
+    cursor: pointer;
+    color: #1e1f20;
+    margin-bottom: 1rem;
+}
+.card-hover:hover{
+    background-color: #1e1f20;
+    color: #fff;
+    transform: translateY(-5px);
+    transition: .25s ease-in-out;
+    box-shadow: 0 0 2rem rgba(33, 37, 41, .1);
+}
+.card-shadow:hover{
+    transform: translateY(-5px);
+    transition: .25s ease-in-out;
+    box-shadow: 0 0 2rem rgba(33, 37, 41, .1);
+}
+.text-success{
+    background-color: #0275d8;
+    padding: 0.25rem 0.35rem;
+    color: white !important;
+    border-radius: 5px;
+}
+.table>thead tr{
+    color:white;
+    text-align: left;
+}
+tr.highlight th{
+    color:white;
+    background-color: #1e1f20;
+}
+.content{
+    flex: 1 1 auto;
+}
+.footer{
+    background-color: white;
+    padding: 1rem .875rem;
+}
+#myChart2 {
+    height: 400px;
+    width: 100px;
+}
+.tables {
+    max-height: 300px; /* Set a fixed height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
