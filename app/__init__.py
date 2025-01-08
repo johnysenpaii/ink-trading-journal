@@ -8,9 +8,6 @@ import os
 def create_app():
     app = Flask(__name__)
 
-    # Set up the secret key for sessions (optional)
-    app.config['SECRET_KEY'] = 'itlognakatol'
-
     # Database setup: You can also set a config variable for database path if needed
     app.config['DATABASE'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'trading_journal.db')
 
